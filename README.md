@@ -172,8 +172,9 @@ dist-<标题>/
 ## 七、自检与验收
 
 ```bash
-python3 scripts/lesson_prep.py config                 # 环境依赖
-python3 scripts/verify_pack.py --pack-dir ./runs/rnn-90   # 交付物判据
+python3 scripts/lesson_prep.py config                        # 环境依赖
+python3 scripts/verify_pack.py --pack-dir ./runs/rnn-90      # 交付物判据
+python3 scripts/check_download_page.py --dist-dir ./dist     # 下载页链接逐条可开
 ```
 
 判据清单见 [references/quality-gates.md](references/quality-gates.md)。

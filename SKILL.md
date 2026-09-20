@@ -180,7 +180,8 @@ python3 scripts/lesson_prep.py bundle  --pack-dir ./runs/x --out ./dist --name "
 自检命令：
 
 ```bash
-python3 scripts/verify_pack.py --pack-dir ./runs/rnn-90
+python3 scripts/verify_pack.py --pack-dir ./runs/rnn-90          # 交付物判据
+python3 scripts/check_download_page.py --dist-dir ./dist-xxx     # 下载页每条链接可开
 ```
 
 ---

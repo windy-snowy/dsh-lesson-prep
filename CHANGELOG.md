@@ -2,6 +2,12 @@
 
 遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 与语义化版本。
 
+## [未发布]
+
+### 修复
+- 新增 `scripts/check_download_page.py`：下载页链接校验必须先把 URL 编码解码再判断文件存在，
+  否则中文文件名会被误判成断链（CI 首次运行因此变红）。CI 第 5 步改为调用该脚本。
+
 ## [0.1.0] - 2026-09-20
 
 ### 新增

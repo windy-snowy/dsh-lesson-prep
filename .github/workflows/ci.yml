@@ -50,11 +50,4 @@ jobs:
           python scripts/lesson_prep.py all --title "CI 端到端" --deck /tmp/ci-deck.pptx \
             --out /tmp/ci-e2e --minutes 90
           python scripts/lesson_prep.py bundle --pack-dir /tmp/ci-e2e --out /tmp/ci-dist --name "CI 端到端-90分钟备课包"
-          python - <<'PY'
-          import os, re, urllib.parse
-          html = open("/tmp/ci-dist/index.html", encoding="utf-8").read()
-          links = re.findall(r'(?:href|src)="([^"]+)"', html)
-          bad = [h for h in links if not os.path.exists(urllib.parse.unquote(h.split("?")[0]))]
-          assert not bad, bad
-          print("下载页 %d 条链接全部可用" % len(links))
-          PY
+          python scripts/check_download_page.py --dist-dir /tmp/ci-dist
