@@ -2,11 +2,18 @@
 
 遵循 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/) 与语义化版本。
 
-## [未发布]
+## [0.1.1] - 2026-09-20
 
 ### 修复
-- 新增 `scripts/check_download_page.py`：下载页链接校验必须先把 URL 编码解码再判断文件存在，
-  否则中文文件名会被误判成断链（CI 首次运行因此变红）。CI 第 5 步改为调用该脚本。
+- CI 首次运行变红：下载页链接校验没有先把 URL 编码解码就判断文件是否存在，中文文件名被误判成断链。
+- 新增 `scripts/check_download_page.py`：按 URL 解码后逐条校验 href 是否真的可打开，并额外检查
+  「有没有 zip 整包 / zip 是否为空 / 页面有没有链接」三种异常。CI 第五步改为调用该脚本。
+- README 与 SKILL.md 的验收命令补上 `check_download_page.py`，CHANGELOG 记录本次修复。
+
+### 验证
+- GitHub Actions run #35498015835 全部步骤通过（语法编译 / 骨架冒烟 / 合成课件端到端）。
+- 本地对自造 35 页课件跑通全链路，下载页 17 条链接全部可开；对上一轮真实交付物的下载页复检，
+  39 条链接全部可开。
 
 ## [0.1.0] - 2026-09-20
 
