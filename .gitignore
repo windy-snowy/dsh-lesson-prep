@@ -1,0 +1,41 @@
+# ---- 运行产物（绝不入库）----
+runs/
+dist-*/
+out/
+output/
+*.zip
+*.mp4
+*.pptx
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+# ---- 输入文件（课件 / 数据集 / 视频）----
+data/
+datasets/
+*.csv
+*.tar.gz
+
+# ---- 密钥与本地配置（绝不入库）----
+config.json
+.env
+*.key
+*.pem
+credentials*
+slideforge.config.json
+editppt.config.yaml
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# ---- 编辑器 / 系统 ----
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
